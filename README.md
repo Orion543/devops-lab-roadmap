@@ -71,12 +71,11 @@
 
 ### 每個 Stage 的目錄結構
 stage-XX-xxx/
-├── README.md # 該階段的說明與總結
-├── docs/ # 筆記、架構圖、指令速查
-├── scripts/ # 腳本檔案
-├── systemd/ # systemd service 檔案（如有）
-└── evidence/ # 驗證證據（指令輸出）
-
+├── README.md
+├── docs/
+├── scripts/
+├── systemd/
+└── evidence/
 text
 
 ### 維護原則
