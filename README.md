@@ -70,13 +70,15 @@
 ## 使用方式
 
 ### 每個 Stage 的目錄結構
+
+```text
 stage-XX-xxx/
 ├── README.md
 ├── docs/
 ├── scripts/
 ├── systemd/
 └── evidence/
-text
+```
 
 ### 維護原則
 
