@@ -76,6 +76,9 @@ stage-XX-xxx/
 ├── scripts/ # 腳本檔案
 ├── systemd/ # systemd service 檔案（如有）
 └── evidence/ # 驗證證據（指令輸出）
+
+text
+
 ### 維護原則
 
 1. 每完成一個小段落，就做一次 commit
