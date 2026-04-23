@@ -1,0 +1,51 @@
+Apr 22 17:12:50 web-01 sshd[2389]: pam_unix(sshd:session): session opened for user orion(uid=1000) by orion(uid=0)
+Apr 22 17:14:10 web-01 systemd[1]: Stopping ssh.service - OpenBSD Secure Shell server...
+Apr 22 17:14:10 web-01 sshd[7661]: Server listening on 0.0.0.0 port 22.
+Apr 22 17:14:10 web-01 sshd[7661]: Server listening on :: port 22.
+Apr 22 17:24:29 web-01 systemd[1]: Stopping ssh.service - OpenBSD Secure Shell server...
+Apr 22 17:24:29 web-01 sshd[7661]: Received signal 15; terminating.
+Apr 22 17:24:29 web-01 systemd[1]: ssh.service: Deactivated successfully.
+Apr 22 17:24:29 web-01 systemd[1]: Stopped ssh.service - OpenBSD Secure Shell server.
+-- Boot 19846babe0544be7b330967e557a04dc --
+Apr 23 16:05:38 web-01 systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+Apr 23 16:05:38 web-01 sshd[1676]: Server listening on 0.0.0.0 port 22.
+Apr 23 16:05:38 web-01 sshd[1676]: Server listening on :: port 22.
+Apr 23 16:05:38 web-01 systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+Apr 23 16:05:38 web-01 sshd[1677]: Accepted publickey for orion from 192.168.0.101 port 44998 ssh2: ED25519 SHA256:cjq5p+wGV4HURMaV9PDi2iGfTrNfmlDHjfPB0U18Ogs
+Apr 23 16:05:38 web-01 sshd[1677]: pam_unix(sshd:session): session opened for user orion(uid=1000) by orion(uid=0)
+Apr 23 16:07:12 web-01 sshd[1676]: Received signal 15; terminating.
+Apr 23 16:07:12 web-01 systemd[1]: Stopping ssh.service - OpenBSD Secure Shell server...
+Apr 23 16:07:12 web-01 systemd[1]: ssh.service: Deactivated successfully.
+Apr 23 16:07:12 web-01 systemd[1]: Stopped ssh.service - OpenBSD Secure Shell server.
+Apr 23 16:07:50 web-01 systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+Apr 23 16:07:50 web-01 sshd[1910]: Server listening on 0.0.0.0 port 22.
+Apr 23 16:07:50 web-01 sshd[1910]: Server listening on :: port 22.
+Apr 23 16:07:50 web-01 systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+Apr 23 16:08:02 web-01 systemd[1]: Reloading ssh.service - OpenBSD Secure Shell server...
+Apr 23 16:08:02 web-01 sshd[1910]: Received SIGHUP; restarting.
+Apr 23 16:08:02 web-01 sshd[1910]: Server listening on 0.0.0.0 port 22.
+Apr 23 16:08:02 web-01 sshd[1910]: Server listening on :: port 22.
+Apr 23 16:08:02 web-01 systemd[1]: Reloaded ssh.service - OpenBSD Secure Shell server.
+Apr 23 16:43:12 web-01 sshd[3079]: Accepted publickey for orion from 192.168.0.101 port 50192 ssh2: ED25519 SHA256:cjq5p+wGV4HURMaV9PDi2iGfTrNfmlDHjfPB0U18Ogs
+Apr 23 16:43:12 web-01 sshd[3079]: pam_unix(sshd:session): session opened for user orion(uid=1000) by orion(uid=0)
+Apr 23 16:43:12 web-01 sshd[3079]: pam_unix(sshd:session): session closed for user orion
+Apr 23 16:44:49 web-01 sshd[3164]: Accepted publickey for orion from 192.168.0.101 port 36840 ssh2: ED25519 SHA256:cjq5p+wGV4HURMaV9PDi2iGfTrNfmlDHjfPB0U18Ogs
+Apr 23 16:44:49 web-01 sshd[3164]: pam_unix(sshd:session): session opened for user orion(uid=1000) by orion(uid=0)
+Apr 23 16:44:50 web-01 sshd[3164]: pam_unix(sshd:session): session closed for user orion
+Apr 23 16:46:30 web-01 sshd[3256]: Accepted publickey for orion from 192.168.0.101 port 34924 ssh2: ED25519 SHA256:cjq5p+wGV4HURMaV9PDi2iGfTrNfmlDHjfPB0U18Ogs
+Apr 23 16:46:30 web-01 sshd[3256]: pam_unix(sshd:session): session opened for user orion(uid=1000) by orion(uid=0)
+Apr 23 16:46:30 web-01 sshd[3256]: pam_unix(sshd:session): session closed for user orion
+Apr 23 16:46:39 web-01 sshd[3331]: Accepted publickey for orion from 192.168.0.101 port 41624 ssh2: ED25519 SHA256:cjq5p+wGV4HURMaV9PDi2iGfTrNfmlDHjfPB0U18Ogs
+Apr 23 16:46:39 web-01 sshd[3331]: pam_unix(sshd:session): session opened for user orion(uid=1000) by orion(uid=0)
+Apr 23 16:46:39 web-01 sshd[3331]: pam_unix(sshd:session): session closed for user orion
+Apr 23 17:18:02 web-01 sshd[3533]: Accepted publickey for orion from 192.168.0.101 port 45750 ssh2: ED25519 SHA256:cjq5p+wGV4HURMaV9PDi2iGfTrNfmlDHjfPB0U18Ogs
+Apr 23 17:18:02 web-01 sshd[3533]: pam_unix(sshd:session): session opened for user orion(uid=1000) by orion(uid=0)
+Apr 23 17:18:02 web-01 sshd[3533]: pam_unix(sshd:session): session closed for user orion
+Apr 23 17:26:10 web-01 sshd[3726]: Accepted publickey for orion from 192.168.0.101 port 53036 ssh2: ED25519 SHA256:cjq5p+wGV4HURMaV9PDi2iGfTrNfmlDHjfPB0U18Ogs
+Apr 23 17:26:10 web-01 sshd[3726]: pam_unix(sshd:session): session opened for user orion(uid=1000) by orion(uid=0)
+Apr 23 17:26:11 web-01 sshd[3726]: pam_unix(sshd:session): session closed for user orion
+Apr 23 17:33:11 web-01 sshd[3838]: Accepted publickey for orion from 192.168.0.101 port 44434 ssh2: ED25519 SHA256:cjq5p+wGV4HURMaV9PDi2iGfTrNfmlDHjfPB0U18Ogs
+Apr 23 17:33:11 web-01 sshd[3838]: pam_unix(sshd:session): session opened for user orion(uid=1000) by orion(uid=0)
+Apr 23 17:33:12 web-01 sshd[3838]: pam_unix(sshd:session): session closed for user orion
+Apr 23 18:02:03 web-01 sshd[4009]: Accepted publickey for orion from 192.168.0.101 port 45782 ssh2: ED25519 SHA256:cjq5p+wGV4HURMaV9PDi2iGfTrNfmlDHjfPB0U18Ogs
+Apr 23 18:02:03 web-01 sshd[4009]: pam_unix(sshd:session): session opened for user orion(uid=1000) by orion(uid=0)

@@ -1,0 +1,74 @@
+Executing: program /usr/bin/ssh host web-01, user orion, command sftp
+OpenSSH_9.6p1 Ubuntu-3ubuntu13.15, OpenSSL 3.0.13 30 Jan 2024
+debug1: Reading configuration data /home/orion/.ssh/config
+debug1: /home/orion/.ssh/config line 9: Applying options for web-01
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 19: include /etc/ssh/ssh_config.d/*.conf matched no files
+debug1: /etc/ssh/ssh_config line 21: Applying options for *
+debug1: Connecting to 192.168.0.111 [192.168.0.111] port 22.
+debug1: Connection established.
+debug1: identity file /home/orion/.ssh/login_server_web01_prod type 3
+debug1: identity file /home/orion/.ssh/login_server_web01_prod-cert type -1
+debug1: Local version string SSH-2.0-OpenSSH_9.6p1 Ubuntu-3ubuntu13.15
+debug1: Remote protocol version 2.0, remote software version OpenSSH_9.6p1 Ubuntu-3ubuntu13.15
+debug1: compat_banner: match: OpenSSH_9.6p1 Ubuntu-3ubuntu13.15 pat OpenSSH* compat 0x04000000
+debug1: Authenticating to 192.168.0.111:22 as 'orion'
+debug1: load_hostkeys: fopen /home/orion/.ssh/known_hosts2: No such file or directory
+debug1: load_hostkeys: fopen /etc/ssh/ssh_known_hosts: No such file or directory
+debug1: load_hostkeys: fopen /etc/ssh/ssh_known_hosts2: No such file or directory
+debug1: SSH2_MSG_KEXINIT sent
+debug1: SSH2_MSG_KEXINIT received
+debug1: kex: algorithm: sntrup761x25519-sha512@openssh.com
+debug1: kex: host key algorithm: ssh-ed25519
+debug1: kex: server->client cipher: chacha20-poly1305@openssh.com MAC: <implicit> compression: none
+debug1: kex: client->server cipher: chacha20-poly1305@openssh.com MAC: <implicit> compression: none
+debug1: expecting SSH2_MSG_KEX_ECDH_REPLY
+debug1: SSH2_MSG_KEX_ECDH_REPLY received
+debug1: Server host key: ssh-ed25519 SHA256:ZDlFyptuAz6NwuZjpG29JVQkf3mxxpiNbA0XWb9hQTI
+debug1: load_hostkeys: fopen /home/orion/.ssh/known_hosts2: No such file or directory
+debug1: load_hostkeys: fopen /etc/ssh/ssh_known_hosts: No such file or directory
+debug1: load_hostkeys: fopen /etc/ssh/ssh_known_hosts2: No such file or directory
+debug1: Host '192.168.0.111' is known and matches the ED25519 host key.
+debug1: Found key in /home/orion/.ssh/known_hosts:4
+debug1: ssh_packet_send2_wrapped: resetting send seqnr 3
+debug1: rekey out after 134217728 blocks
+debug1: SSH2_MSG_NEWKEYS sent
+debug1: Sending SSH2_MSG_EXT_INFO
+debug1: expecting SSH2_MSG_NEWKEYS
+debug1: ssh_packet_read_poll2: resetting read seqnr 3
+debug1: SSH2_MSG_NEWKEYS received
+debug1: rekey in after 134217728 blocks
+debug1: SSH2_MSG_EXT_INFO received
+debug1: kex_ext_info_client_parse: server-sig-algs=<ssh-ed25519,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,sk-ssh-ed25519@openssh.com,sk-ecdsa-sha2-nistp256@openssh.com,rsa-sha2-512,rsa-sha2-256>
+debug1: kex_ext_info_check_ver: publickey-hostbound@openssh.com=<0>
+debug1: kex_ext_info_check_ver: ping@openssh.com=<0>
+debug1: SSH2_MSG_SERVICE_ACCEPT received
+debug1: SSH2_MSG_EXT_INFO received
+debug1: kex_ext_info_client_parse: server-sig-algs=<ssh-ed25519,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,sk-ssh-ed25519@openssh.com,sk-ecdsa-sha2-nistp256@openssh.com,rsa-sha2-512,rsa-sha2-256>
+debug1: Authentications that can continue: publickey,password
+debug1: Next authentication method: publickey
+debug1: Will attempt key: /home/orion/.ssh/login_server_web01_prod ED25519 SHA256:cjq5p+wGV4HURMaV9PDi2iGfTrNfmlDHjfPB0U18Ogs explicit
+debug1: Offering public key: /home/orion/.ssh/login_server_web01_prod ED25519 SHA256:cjq5p+wGV4HURMaV9PDi2iGfTrNfmlDHjfPB0U18Ogs explicit
+debug1: Server accepts key: /home/orion/.ssh/login_server_web01_prod ED25519 SHA256:cjq5p+wGV4HURMaV9PDi2iGfTrNfmlDHjfPB0U18Ogs explicit
+Authenticated to 192.168.0.111 ([192.168.0.111]:22) using "publickey".
+debug1: channel 0: new session [client-session] (inactive timeout: 0)
+debug1: Requesting no-more-sessions@openssh.com
+debug1: Entering interactive session.
+debug1: pledge: filesystem
+debug1: client_input_global_request: rtype hostkeys-00@openssh.com want_reply 0
+debug1: client_input_hostkeys: searching /home/orion/.ssh/known_hosts for 192.168.0.111 / (none)
+debug1: client_input_hostkeys: searching /home/orion/.ssh/known_hosts2 for 192.168.0.111 / (none)
+debug1: client_input_hostkeys: hostkeys file /home/orion/.ssh/known_hosts2 does not exist
+debug1: client_input_hostkeys: no new or deprecated keys from server
+debug1: Remote: /home/orion/.ssh/authorized_keys:1: key options: agent-forwarding port-forwarding pty user-rc x11-forwarding
+debug1: Remote: /home/orion/.ssh/authorized_keys:1: key options: agent-forwarding port-forwarding pty user-rc x11-forwarding
+debug1: Sending environment.
+debug1: channel 0: setting env LANG = "en_US.UTF-8"
+debug1: Sending subsystem: sftp
+debug1: pledge: fork
+scp: debug1: truncating at 181
+debug1: client_input_channel_req: channel 0 rtype exit-status reply 0
+debug1: channel 0: free: client-session, nchannels 1
+Transferred: sent 4068, received 4664 bytes, in 0.2 seconds
+Bytes per second: sent 16836.5, received 19303.2
+debug1: Exit status 0
