@@ -1,0 +1,2 @@
+*.log
+stage-01-linux-lab/scripts/bootstrap-*.log
