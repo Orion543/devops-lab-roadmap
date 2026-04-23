@@ -1,0 +1,97 @@
+== Update packages ==
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Hit:1 http://tw.archive.ubuntu.com/ubuntu noble InRelease
+Get:2 http://tw.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Hit:3 http://tw.archive.ubuntu.com/ubuntu noble-backports InRelease
+Get:4 http://tw.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1,919 kB]
+Hit:5 http://security.ubuntu.com/ubuntu noble-security InRelease
+Get:6 http://tw.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1,684 kB]
+Fetched 3,729 kB in 1s (4,278 kB/s)
+Reading package lists...
+Building dependency tree...
+Reading state information...
+2 packages can be upgraded. Run 'apt list --upgradable' to see them.
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Calculating upgrade...
+The following upgrades have been deferred due to phasing:
+  ubuntu-pro-client ubuntu-pro-client-l10n
+0 upgraded, 0 newly installed, 0 to remove and 2 not upgraded.
+== Install base tools ==
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+openssh-server is already the newest version (1:9.6p1-3ubuntu13.15).
+curl is already the newest version (8.5.0-2ubuntu10.8).
+vim is already the newest version (2:9.1.0016-1ubuntu7.11).
+git is already the newest version (1:2.43.0-1ubuntu7.3).
+htop is already the newest version (3.3.0-4build1).
+rsync is already the newest version (3.2.7-1ubuntu1.2).
+net-tools is already the newest version (2.10-0.1ubuntu4.4).
+0 upgraded, 0 newly installed, 0 to remove and 2 not upgraded.
+== Host info ==
+ Static hostname: devops-admin
+       Icon name: computer-vm
+         Chassis: vm 🖴
+      Machine ID: 72ba2e193de7417fb31f6fc89cb40021
+         Boot ID: 7557520f50cf4e4b9bfc5c958b105e7f
+  Virtualization: vmware
+Operating System: Ubuntu 24.04.4 LTS
+          Kernel: Linux 6.8.0-110-generic
+    Architecture: x86-64
+ Hardware Vendor: VMware, Inc.
+  Hardware Model: VMware Virtual Platform
+Firmware Version: 6.00
+   Firmware Date: Thu 2020-11-12
+    Firmware Age: 5y 5month 1w 2d
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: ens33: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 00:0c:29:1f:b8:3e brd ff:ff:ff:ff:ff:ff
+    altname enp2s1
+    inet 192.168.0.101/24 brd 192.168.0.255 scope global ens33
+       valid_lft forever preferred_lft forever
+    inet6 fe80::20c:29ff:fe1f:b83e/64 scope link 
+       valid_lft forever preferred_lft forever
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           387M  1.6M  386M   1% /run
+/dev/sda4        46G  7.0G   37G  16% /
+tmpfs           1.9G     0  1.9G   0% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/sda2       974M  200M  707M  23% /boot
+/dev/sda3       2.0G   24K  1.8G   1% /swap
+tmpfs           387M   12K  387M   1% /run/user/1000
+               total        used        free      shared  buff/cache   available
+Mem:            3868         627        2525           1         976        3240
+Swap:           3867           0        3867
+== SSH status ==
+● ssh.service - OpenBSD Secure Shell server
+     Loaded: loaded (/usr/lib/systemd/system/ssh.service; disabled; preset: enabled)
+     Active: active (running) since Wed 2026-04-22 16:16:53 UTC; 48min ago
+TriggeredBy: ● ssh.socket
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+    Process: 11007 ExecStartPre=/usr/sbin/sshd -t (code=exited, status=0/SUCCESS)
+   Main PID: 11049 (sshd)
+      Tasks: 1 (limit: 4543)
+     Memory: 1.2M (peak: 1.8M)
+        CPU: 13ms
+     CGroup: /system.slice/ssh.service
+             └─11049 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+
+Apr 22 16:16:53 devops-admin sshd[11049]: Server listening on 0.0.0.0 port 22.
+Apr 22 16:16:53 devops-admin sshd[11049]: Server listening on :: port 22.
+Apr 22 16:16:53 devops-admin systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
