@@ -1,0 +1,58 @@
+=== 錯誤案例 1: nginx 未啟動 ===
+時間: Sun Apr 26 11:38:03 AM UTC 2026
+模擬操作: sudo systemctl stop nginx
+測試指令: curl -I http://web-01
+錯誤輸出:
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (7) Failed to connect to web-01 port 80 after 0 ms: Couldn't connect to server
+
+=== 錯誤日誌 ===
+2026/04/26 04:27:03 [notice] 2361#2361: using inherited sockets from "5;6;"
+2026/04/26 06:55:01 [error] 8261#8261: *16 connect() failed (111: Connection refused) while connecting to upstream, client: 192.168.0.101, server: _, request: "GET /app/ HTTP/1.1", upstream: "http://127.0.0.1:5000/", host: "web-01"
+2026/04/26 06:55:17 [error] 8260#8260: *18 connect() failed (111: Connection refused) while connecting to upstream, client: 192.168.0.101, server: _, request: "HEAD /app/ HTTP/1.1", upstream: "http://127.0.0.1:5000/", host: "web-01"
+
+=== 解決方式 ===
+sudo systemctl start nginx
+
+=== 錯誤案例 2: nginx config 語法錯誤 ===
+時間: Sun Apr 26 11:43:46 AM UTC 2026
+模擬操作: 在 default 設定檔中加入 '故意錯誤語法；'
+測試指令: sudo nginx -t
+錯誤輸出:
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+
+=== 解決方式 ===
+1. 複製備份檔還原: sudo cp /etc/nginx/sites-available/default.bak /etc/nginx/sites-available/default
+2. 測試設定: sudo nginx -t
+3. 重新載入: sudo systemctl reload nginx
+
+=== 錯誤案例 3: backend 掛掉 (502) ===
+時間: Sun Apr 26 11:51:48 AM UTC 2026
+模擬操作: 關閉 Python HTTP Server (port 5000)
+測試指令: curl -I http://web-01/app/
+錯誤輸出:
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0   166    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+HTTP/1.1 502 Bad Gateway
+Server: nginx/1.24.0 (Ubuntu)
+Date: Sun, 26 Apr 2026 11:51:48 GMT
+Content-Type: text/html
+Content-Length: 166
+Connection: keep-alive
+
+
+=== Nginx error log ===
+2026/04/26 04:27:03 [notice] 2361#2361: using inherited sockets from "5;6;"
+2026/04/26 06:55:01 [error] 8261#8261: *16 connect() failed (111: Connection refused) while connecting to upstream, client: 192.168.0.101, server: _, request: "GET /app/ HTTP/1.1", upstream: "http://127.0.0.1:5000/", host: "web-01"
+2026/04/26 06:55:17 [error] 8260#8260: *18 connect() failed (111: Connection refused) while connecting to upstream, client: 192.168.0.101, server: _, request: "HEAD /app/ HTTP/1.1", upstream: "http://127.0.0.1:5000/", host: "web-01"
+2026/04/26 11:51:10 [error] 83682#83682: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 192.168.0.101, server: _, request: "HEAD /app/ HTTP/1.1", upstream: "http://127.0.0.1:5000/", host: "web-01"
+2026/04/26 11:51:48 [error] 83679#83679: *3 connect() failed (111: Connection refused) while connecting to upstream, client: 192.168.0.101, server: _, request: "HEAD /app/ HTTP/1.1", upstream: "http://127.0.0.1:5000/", host: "web-01"
+
+=== 解決方式 ===
+1. 重新啟動 backend: cd /home/orion/backend-demo && python3 -m http.server 5000
+2. 確認服務有啟動: curl http://127.0.0.1:5000
+3. 重新測試: curl http://web-01/app/
