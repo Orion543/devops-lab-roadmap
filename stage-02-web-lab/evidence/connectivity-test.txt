@@ -1,0 +1,30 @@
+==========================================
+Stage 02 Web Lab - Connectivity Test
+==========================================
+
+[Test 1] Nginx Status
+HTTP/1.1 301 Moved Permanently
+
+[Test 2] Reverse Proxy
+HTTP/1.1 301 Moved Permanently
+
+[Test 3] Load Balancing (multiple requests)
+Request 1: <h1>301 Moved Permanently</h1>
+Request 2: <h1>301 Moved Permanently</h1>
+Request 3: <h1>301 Moved Permanently</h1>
+
+[Test 4] HTTPS (if configured)
+HTTP/2 200 
+
+[Test 5] Health Check Endpoint
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body>
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>nginx/1.24.0 (Ubuntu)</center>
+</body>
+</html>
+
+==========================================
+Test Complete
+==========================================
