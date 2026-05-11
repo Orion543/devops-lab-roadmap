@@ -1,0 +1,21 @@
+== Rate Limit Test ==
+Request 1: 200
+Request 2: 200
+Request 3: 200
+Request 4: 200
+Request 5: 200
+Request 6: 200
+Request 7: 200
+Request 8: 200
+Request 9: 200
+Request 10: 200
+Request 11: 200
+Request 12: 503
+Request 13: 503
+Request 14: 503
+Request 15: 503
+Request 16: 503
+Request 17: 503
+Request 18: 503
+Request 19: 503
+Request 20: 503
