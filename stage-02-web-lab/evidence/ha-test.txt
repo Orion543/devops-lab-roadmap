@@ -1,0 +1,8 @@
+=== HA Test: Stop web-01:5000 ===
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+
+=== HA Test: Stop web-01:5001 ===
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+
+=== Restart backends ===
+HA test completed

@@ -1,0 +1,24 @@
+# 錯誤案例記錄 - Stage 02
+
+## 案例 1：Nginx 設定檔語法錯誤
+- **操作**：故意在 `/etc/nginx/sites-available/default` 中刪除一個分號
+- **錯誤現象**：執行 `sudo nginx -t` 出現 `nginx: [emerg] directive "server" is not terminated by ";"`
+- **解法**：修正設定檔，補上分號，重新 `sudo nginx -t` 測試成功後 `sudo systemctl reload nginx`
+
+## 案例 2：Rate Limiting 觸發 503
+- **操作**：連續發送 20 個請求 `for i in {1..20}; do curl -k -s -o /dev/null -w "%{http_code}\n" https://web-01/app/; done`
+- **錯誤現象**：第 12 個請求開始回傳 `503 Service Temporarily Unavailable`
+- **原因**：Rate Limiting 設定 `rate=30r/m` + `burst=10`，短時間內超過限制
+- **解法**：正常行為，代表限流生效；若需放寬，可調高 `rate` 或 `burst`
+
+## 案例 3：Backend 服務未啟動導致 502
+- **操作**：停掉 web-01 上的 Python HTTP Server
+- **錯誤現象**：`curl https://web-01/app/` 回傳 `502 Bad Gateway`
+- **排查**：`docker logs <nginx>` 或 `tail /var/log/nginx/error.log` 看到 `connect() failed (111: Connection refused)`
+- **解法**：重新啟動 backend 服務 `cd /home/orion/backend-demo && python3 -m http.server 5000 &`
+
+## 案例 4：HTTP 請求被強制轉 HTTPS
+- **操作**：使用 `curl http://web-01/app/`
+- **錯誤現象**：回傳 `301 Moved Permanently`
+- **原因**：Nginx 設定將所有 HTTP 流量重導向至 HTTPS
+- **解法**：使用 `curl -k https://web-01/app/` 測試
