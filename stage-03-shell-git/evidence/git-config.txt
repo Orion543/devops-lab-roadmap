@@ -1,0 +1,11 @@
+user.name=Orion543
+user.email=ren94320361@gmail.com
+alias.co=checkout
+alias.br=branch
+alias.ci=commit
+alias.st=status
+alias.lg=log --oneline --graph --all
+alias.last=log -1 HEAD
+alias.unstage=reset HEAD --
+merge.tool=vimdiff
+diff.tool=vimdiff
