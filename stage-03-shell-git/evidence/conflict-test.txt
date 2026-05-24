@@ -1,0 +1,53 @@
+=== 衝突解決測試 ===
+衝突發生時會出現 CONFLICT 訊息
+
+orion@devops-admin:~/repos/devops-lab-roadmap$ git branch
+* main
+orion@devops-admin:~/repos/devops-lab-roadmap$ git checkout -b feature/conflict-test
+Switched to a new branch 'feature/conflict-test'
+orion@devops-admin:~/repos/devops-lab-roadmap$ echo "Line from feature branch" > ~/repos/devops-lab-roadmap/conflict.txt
+git add conflict.txt
+git commit -m "feat: add conflict.txt from feature"
+[feature/conflict-test 0b1fe45] feat: add conflict.txt from feature
+ 1 file changed, 1 insertion(+)
+ create mode 100644 conflict.txt
+orion@devops-admin:~/repos/devops-lab-roadmap$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+orion@devops-admin:~/repos/devops-lab-roadmap$ echo "Line from main branch" > ~/repos/devops-lab-roadmap/conflict.txt
+git add conflict.txt
+git commit -m "docs: add conflict.txt from main"
+[main 1e12cfb] docs: add conflict.txt from main
+ 1 file changed, 1 insertion(+)
+ create mode 100644 conflict.txt
+orion@devops-admin:~/repos/devops-lab-roadmap$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+orion@devops-admin:~/repos/devops-lab-roadmap$ git merge feature/conflict-test
+Auto-merging conflict.txt
+CONFLICT (add/add): Merge conflict in conflict.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+
+解決衝突後使用 git add + git commit 完成合併
+
+orion@devops-admin:~/repos/devops-lab-roadmap$ vi conflict.txt
+orion@devops-admin:~/repos/devops-lab-roadmap$ git add conflict.txt
+[main 713851f] fix: resolve merge conflict in conflict.txt
+orion@devops-admin:~/repos/devops-lab-roadmap$ git branch -d feature/conflict-test
+rm -f conflict.txt
+Deleted branch feature/conflict-test (was 0b1fe45).
+
+
+衝突標記：<<<<<<< HEAD、=======、>>>>>>>
+
+orion@devops-admin:~/repos/devops-lab-roadmap$ cat conflict.txt
+<<<<<<< HEAD
+Line from main branch
+=======
+Line from feature branch
+>>>>>>> feature/conflict-test
+
