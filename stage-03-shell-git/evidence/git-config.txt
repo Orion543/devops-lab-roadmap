@@ -9,3 +9,4 @@ alias.last=log -1 HEAD
 alias.unstage=reset HEAD --
 merge.tool=vimdiff
 diff.tool=vimdiff
+help.autocorrect=10
