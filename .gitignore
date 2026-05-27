@@ -1,2 +1,26 @@
 *.log
 stage-01-linux-lab/scripts/bootstrap-*.log
+
+# Stage 03 專用
+stage-03-shell-git/evidence/*.log
+stage-03-shell-git/scripts/*.log
+
+# 作業系統檔案
+.DS_Store
+Thumbs.db
+
+# IDE 檔案
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 機密檔案
+.env
+*.key
+*.pem
+secrets/
+
+# 暫存檔案
+*.tmp
+*.temp
