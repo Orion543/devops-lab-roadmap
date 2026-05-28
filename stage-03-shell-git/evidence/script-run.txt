@@ -1,0 +1,32 @@
+==========================================
+System Information Report
+==========================================
+
+[Hostname]
+devops-admin
+
+[IP Address]
+    inet 192.168.0.101/24 brd 192.168.0.255 scope global ens33
+
+[Disk Usage]
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda4        46G  7.1G   37G  17% /
+/dev/sda2       974M  200M  707M  23% /boot
+/dev/sda3       2.0G   24K  1.8G   1% /swap
+
+[Memory Usage]
+               total        used        free      shared  buff/cache   available
+Mem:           3.8Gi       475Mi       3.3Gi       1.5Mi       279Mi       3.3Gi
+Swap:          3.8Gi          0B       3.8Gi
+
+[Uptime]
+ 15:39:24 up 25 min,  2 users,  load average: 0.02, 0.02, 0.00
+
+[Kernel Version]
+6.8.0-117-generic
+
+[CPU Info]
+Model name:                              12th Gen Intel(R) Core(TM) i9-12900K
+Thread(s) per core:                      1
+Core(s) per socket:                      2
+Socket(s):                               2
