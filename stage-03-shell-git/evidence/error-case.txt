@@ -1,0 +1,32 @@
+==========================================
+Health Check - web-01
+==========================================
+
+[1/4] Checking nginx service...
+[OK] nginx service is running
+
+[2/4] Checking port 80...
+[OK] port 80 is listening
+
+[3/4] Checking HTTP response...
+[OK] HTTP request succeeded
+
+[4/4] Checking HTTPS response...
+[OK] HTTPS request succeeded
+
+==========================================
+[OK] healthcheck passed for web-01
+==========================================
+
+=== 手動記錄的錯誤案例 ===
+1. 模擬 nginx 未啟動：
+   - 操作：`ssh web-01 "sudo systemctl stop nginx"`
+   - 錯誤訊息：`[FAIL] nginx service is not running`
+   - 解法：`ssh web-01 "sudo systemctl start nginx"`
+
+2. 模擬 Git merge 衝突：
+   - 操作：故意在兩個分支修改同一行
+   - 錯誤訊息：`CONFLICT (content): Merge conflict`
+   - 解法：編輯衝突檔案，刪除衝突標記後提交
+
+3. （請自行補充你遇到的實際錯誤）
