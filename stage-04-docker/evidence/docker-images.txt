@@ -1,0 +1,7 @@
+IMAGE                ID             DISK USAGE   CONTENT SIZE   EXTRA
+alpine:latest        28bd5fe8b56d         13MB         3.93MB        
+hello-world:latest   96498ffd522e       25.9kB         9.49kB        
+my-nginx:1.0.0       e8906ccbba4e       74.1MB         20.5MB   U    
+my-nginx:latest      e8906ccbba4e       74.1MB         20.5MB   U    
+nginx:1.25-alpine    516475cc129d       75.4MB         21.7MB        
+nginx:latest         42f2d24ae18d        241MB           66MB   U    

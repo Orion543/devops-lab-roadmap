@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Stage 04 Docker Build</title>
+</head>
+<body>
+  <h1>My Custom Docker Nginx</h1>
+  <p>Built by orion</p>
+  <p>Version: 1.0.0</p>
+</body>
+</html>
