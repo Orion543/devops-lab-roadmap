@@ -1,0 +1,62 @@
+NETWORK ID     NAME         DRIVER    SCOPE
+1549211d2488   bridge       bridge    local
+f62be1f6fc8a   host         host      local
+11f97e648d22   my-network   bridge    local
+f66e2f6761fd   none         null      local
+[
+    {
+        "Name": "my-network",
+        "Id": "11f97e648d22f3653431171c067832f937b20cc18d7eb3324d053af08df943a9",
+        "Created": "2026-06-21T10:17:27.256734684Z",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": {},
+            "Config": [
+                {
+                    "Subnet": "172.18.0.0/16",
+                    "IPRange": "",
+                    "Gateway": "172.18.0.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {},
+        "Labels": {},
+        "Containers": {
+            "4dc7adc7802ab7786e8487e7cbd485b04f6d022f5168dda12bfe36cee003571a": {
+                "Name": "app2",
+                "EndpointID": "0fe0f67b4cad24895fd45b99723d69a05e9320ca948d0196a1a2f4eb59a8d3c4",
+                "MacAddress": "2a:74:60:3d:ef:06",
+                "IPv4Address": "172.18.0.2/16",
+                "IPv6Address": ""
+            },
+            "bdaaac14a5d77b9f9e48de1191506ae278ab1f7e26727a6c0dd259673d857b87": {
+                "Name": "app1",
+                "EndpointID": "4831f9c1738920e1e4887bd2a63470382e53c447c7bf888d7fc9c03f3bb0cadd",
+                "MacAddress": "a6:91:e1:bc:b0:98",
+                "IPv4Address": "172.18.0.3/16",
+                "IPv6Address": ""
+            }
+        },
+        "Status": {
+            "IPAM": {
+                "Subnets": {
+                    "172.18.0.0/16": {
+                        "IPsInUse": 5,
+                        "DynamicIPsAvailable": 65531
+                    }
+                }
+            }
+        }
+    }
+]
