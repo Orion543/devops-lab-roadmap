@@ -3,4 +3,6 @@ services:
     image: nginx:alpine
     ports:
       - "8080:80"
+    volumes:
+      - ./app:/usr/share/nginx/html
     restart: unless-stopped
