@@ -1,0 +1,2 @@
+NAME                     IMAGE          COMMAND                  SERVICE   CREATED         STATUS         PORTS
+stage-05-compose-web-1   nginx:alpine   "/docker-entrypoint.…"   web       4 minutes ago   Up 4 minutes   0.0.0.0:8080->80/tcp, [::]:8080->80/tcp
