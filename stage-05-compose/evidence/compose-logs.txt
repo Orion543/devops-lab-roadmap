@@ -1,0 +1,26 @@
+app-1  | 172.19.0.3 - - [28/Jun/2026 13:08:46] "GET / HTTP/1.1" 200 -
+web-1  | /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+web-1  | /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+web-1  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+web-1  | 10-listen-on-ipv6-by-default.sh: info: can not modify /etc/nginx/conf.d/default.conf (read-only file system?)
+web-1  | /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+web-1  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+web-1  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+web-1  | /docker-entrypoint.sh: Configuration complete; ready for start up
+web-1  | 2026/06/28 13:08:35 [notice] 1#1: using the "epoll" event method
+web-1  | 2026/06/28 13:08:35 [notice] 1#1: nginx/1.31.2
+web-1  | 2026/06/28 13:08:35 [notice] 1#1: built by gcc 15.2.0 (Alpine 15.2.0) 
+web-1  | 2026/06/28 13:08:35 [notice] 1#1: OS: Linux 6.8.0-124-generic
+web-1  | 2026/06/28 13:08:35 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:524288
+web-1  | 2026/06/28 13:08:35 [notice] 1#1: start worker processes
+web-1  | 2026/06/28 13:08:35 [notice] 1#1: start worker process 21
+web-1  | 2026/06/28 13:08:35 [notice] 1#1: start worker process 22
+web-1  | 2026/06/28 13:08:35 [notice] 1#1: start worker process 23
+web-1  | 2026/06/28 13:08:35 [notice] 1#1: start worker process 24
+web-1  | 172.19.0.1 - - [28/Jun/2026:13:08:46 +0000] "GET /app/ HTTP/1.1" 200 213 "-" "curl/8.5.0" "-"
+web-1  | 172.19.0.1 - - [28/Jun/2026:13:09:31 +0000] "GET /app/ HTTP/1.1" 200 213 "-" "curl/8.5.0" "-"
+web-1  | 2026/06/28 15:08:25 [error] 22#22: *5 connect() failed (113: Host is unreachable) while connecting to upstream, client: 172.19.0.1, server: _, request: "GET /app/ HTTP/1.1", upstream: "http://172.19.0.2:5000/", host: "localhost:8080"
+web-1  | 172.19.0.1 - - [28/Jun/2026:15:08:25 +0000] "GET /app/ HTTP/1.1" 502 157 "-" "curl/8.5.0" "-"
+web-1  | 172.19.0.1 - - [28/Jun/2026:15:11:26 +0000] "GET /app/ HTTP/1.1" 200 213 "-" "curl/8.5.0" "-"
+app-1  | 172.19.0.3 - - [28/Jun/2026 13:09:31] "GET / HTTP/1.1" 200 -
+app-1  | 172.19.0.3 - - [28/Jun/2026 15:11:26] "GET / HTTP/1.1" 200 -
