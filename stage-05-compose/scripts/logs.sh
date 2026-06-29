@@ -2,5 +2,4 @@
 set -euo pipefail
 
 cd "$(dirname "$0")/.."
-echo "Stopping and removing services..."
-docker compose down
+docker compose logs --tail=50 --follow
