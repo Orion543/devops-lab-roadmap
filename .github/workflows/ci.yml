@@ -12,12 +12,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v5
 
-      - name: Build Docker image
-        run: docker build -t my-app ./stage-04-docker/docker
+      - name: Install Docker Compose
+        run: |
+          sudo apt update
+          sudo apt install -y docker-compose-plugin
 
-      - name: Run container
-        run: docker run -d -p 8080:80 --name my-app-container my-app
+      - name: Build and start services with Compose
+        run: |
+          cd stage-05-compose
+          docker compose up -d --build
+
+      - name: Wait for services to be ready
+        run: sleep 5
 
       - name: Test service
-        run: curl http://localhost:8080
-
+        run: curl http://localhost:8080/app/
