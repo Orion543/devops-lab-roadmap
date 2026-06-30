@@ -13,3 +13,10 @@ Workflow: CI Pipeline
 Trigger: push to main (commit for B part)
 Script output: Hostname, IP, Disk, Memory, Uptime, Kernel, CPU displayed
 Timestamp: Tue Jun 30 03:09:35 PM UTC 2026
+
+=== Run container and test ===
+Container started on port 8080. Curl test passed.
+
+=== Healthcheck integration ===
+Healthcheck script: stage-06-ci/scripts/healthcheck-ci.sh
+Script checks HTTP status code 200. Success = CI pass, Failure = CI fail.
