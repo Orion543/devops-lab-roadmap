@@ -6,3 +6,10 @@ Result: SUCCESS
 Log output: CI is working
 Timestamp: Tue Jun 30 02:55:42 PM UTC 2026
 ==========================================
+
+=== B. Run sysinfo script ===
+Result: SUCCESS
+Workflow: CI Pipeline
+Trigger: push to main (commit for B part)
+Script output: Hostname, IP, Disk, Memory, Uptime, Kernel, CPU displayed
+Timestamp: Tue Jun 30 03:09:35 PM UTC 2026
