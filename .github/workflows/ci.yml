@@ -15,3 +15,9 @@ jobs:
       - name: Build Docker image
         run: docker build -t my-app ./stage-04-docker/docker
 
+      - name: Run container
+        run: docker run -d -p 8080:80 --name my-app-container my-app
+
+      - name: Test service
+        run: curl http://localhost:8080
+
