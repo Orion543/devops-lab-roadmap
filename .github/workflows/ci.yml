@@ -12,10 +12,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v5
 
-      - name: Make script executable
-        run: chmod +x stage-03-shell-git/scripts/sysinfo.sh
-
-      - name: Run sysinfo script
-        run: bash stage-03-shell-git/scripts/sysinfo.sh
-
+      - name: Build Docker image
+        run: docker build -t my-app ./stage-04-docker/docker
 
